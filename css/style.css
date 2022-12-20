@@ -72,7 +72,7 @@ img {
     transition: all ease 1.1s;
 }
 
-.text_header{
+.text_header {
     color: #0e7086;
 }
 
@@ -232,4 +232,27 @@ form .form-control {
 .footer_b {
     background-color: #006177;
     color: rgb(228, 231, 233);
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #section-to-print,
+    #section-to-print * {
+        visibility: visible;
+    }
+
+    #section-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+@page {
+    size: auto;
+    size: A5;
+    margin: 0mm;
 }

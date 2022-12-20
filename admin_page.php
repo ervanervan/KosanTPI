@@ -50,9 +50,51 @@ if (!isset($_SESSION['admin_name'])) {
     </nav>
     <!-- NAVBAR -->
 
+    <!-- PRODUCT -->
+    <section id="product" class="bg-light">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Operations</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
 
-    
 
+                    <?php
+                    $sql = "SELECT * FROM user WHERE user_type = 'user' or user_type = 'pemilikkos'";
+                    $result = mysqli_query($conn, $sql);
+                    $no = 1;
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['id'];
+                            $name = $row['name'];
+                            $email = $row['email'];
+
+                            echo '<tr>
+                        <th scope="row">' . $no . '</th>
+                        <td>' . $name . '</td>
+                        <td>' . $email . '</td>
+                        
+                        <td>
+                            <button class="btn btn-danger"><a href="user_delete.php?id=' . $id . '" class="text-light">Delete</a></button>
+                        </td>
+                    </tr>';
+                            $no = $no + 1;
+                        }
+                    }
+
+                    ?>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- PRODUCT -->
 
     <footer class="footer_b py-4">
         <div class="container">

@@ -60,9 +60,7 @@ if (isset($_POST['create'])) {
     <div class="container my-5">
         <form method="POST" enctype="multipart/form-data">
             <div class="row mb-4">
-                <a class="nav-link" href="#product">
-                    <h4 class="text-center btn btn_blue">Tambah Data</h4>
-                </a>
+                <h4 class="text-center ">Tambah Data</h4>
             </div>
             <div class="row g-3 justify-content-center">
                 <div class="col-md-7">

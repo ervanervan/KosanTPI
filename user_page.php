@@ -71,7 +71,7 @@ if (!isset($_SESSION['user_name'])) {
                      <img src="uploads/' . $row['img'] . '" alt="">
                      <h5 class="mt-4"><a href="#"> ' . $namaKos . '</a></h5>
                      <p>Rp' . $hargaKos . ' / Bulan</p>
-                     <button class="btn btn_blue">See Details</button>
+                     <a href="desc_product.php?id=' . $row['id'] . '" class="btn btn_blue">See Details</a>
                   </div>
                </div>';
                }
