@@ -64,9 +64,9 @@ if (!isset($_SESSION['pemilikkos_name'])) {
                         echo "Sorry, there was an error uploading your file.";
                     }
                 }
-                $sql = "UPDATE `products` SET `name` = '$name', `price` ='$price', `desc` ='$desc', `fasilitas` ='$fasilitas', `img` ='$img' WHERE `id`= '$id'";
+                $updte = "UPDATE `products` SET `name` = '$name', `price` ='$price', `desc` ='$desc', `fasilitas` ='$fasilitas', `img` ='$img' WHERE `id`= '$id'";
 
-                $results = mysqli_query($conn, $sql);
+                $results = mysqli_query($conn, $updte);
                 // print_r($results);
 
                 header('location:pemilikkos_page.php');

@@ -53,7 +53,7 @@ if (isset($_POST['create'])) {
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css">
-    <title>Input kos</title>
+    <title>Tambah Kos| Kosan TPI</title>
 </head>
 
 <body>
