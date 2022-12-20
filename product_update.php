@@ -65,7 +65,6 @@ if (!isset($_SESSION['pemilikkos_name'])) {
                     }
                 }
                 $updte = "UPDATE `products` SET `name` = '$name', `price` ='$price', `desc` ='$desc', `fasilitas` ='$fasilitas', `img` ='$img' WHERE `id`= '$id'";
-
                 $results = mysqli_query($conn, $updte);
                 // print_r($results);
 
