@@ -77,7 +77,7 @@ img {
 }
 
 .hero {
-    background-image: url(../img/bgbedroom.jpg);
+    background-image: url(../img/background.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
