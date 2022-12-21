@@ -12,7 +12,7 @@
     <title>Kosan TPI | Home</title>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
@@ -160,7 +160,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="products-post card-effect">
-                        <img src="img/Foto kos (2).jpg" alt="">
+                        <img src="img/Foto_kos.jpg" alt="">
                         <h5 class="mt-4"><a href="#">Kos As'Sidiq</a></h5>
                         <p>Rp500.000 / Bulan</p>
                         <button class="btn btn_blue" onclick="document.location='login_form.php'">See Details</button>
