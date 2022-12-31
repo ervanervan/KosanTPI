@@ -62,6 +62,9 @@ if (!isset($_SESSION['user_name'])) {
     <section id="product" class="bg-light">
         <div class="container">
             <div class="row mb-5">
+                <div class="col-md-9 mx-auto text-center">
+                    <h1>Invoice</h1>
+                </div>
             </div>
             <?php
             $id = $_GET['id'];
@@ -75,9 +78,6 @@ if (!isset($_SESSION['user_name'])) {
                         // print_r($row['name']);
             ?>
                         <div class="row g-4">
-                            <div class="mx-auto text-center mb-5">
-                                <h1>Invoice</h1>
-                            </div>
                             <div class="col">
                                 <div class="d-flex flex-column">
                                     <div id="print" class="d-flex gap-5">
