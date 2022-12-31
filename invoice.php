@@ -14,18 +14,21 @@ if (!isset($_SESSION['user_name'])) {
 <html lang="en">
 
 <head>
-    <?php include "css/css.php"; ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/style.css">
     <title>Invoice | Kosan TPI</title>
     <script>
-        function printDiv(divName) {
-            var printContents = document.getElementById(divName).innerHTML;
-            var originalContents = document.body.innerHTML;
-
-            document.body.innerHTML = printContents;
-
+        function printPageArea(areaID) {
+            var printContent = document.getElementById(areaID).innerHTML;
+            var originalContent = document.body.innerHTML;
+            document.body.innerHTML = printContent;
             window.print();
-
-            document.body.innerHTML = originalContents;
+            document.body.innerHTML = originalContent;
         }
     </script>
 </head>
@@ -72,16 +75,16 @@ if (!isset($_SESSION['user_name'])) {
                         // print_r($row['name']);
             ?>
                         <div class="row g-4">
+                            <div class="mx-auto text-center mb-5">
+                                <h1>Invoice</h1>
+                            </div>
                             <div class="col">
-                                <div class="products-post card-effect d-flex flex-column">
-                                    <div class="col-md-9 mx-auto text-center mb-5">
-                                        <h1>Invoice</h1>
-                                    </div>
-                                    <div id="printableArea" class="d-flex gap-4 align-it">
-                                        <div style="flex:0.6;">
-                                            <img src="uploads/<?php echo $row['img'] ?>" alt="" style="width: 100%; height:300px">
+                                <div class="d-flex flex-column">
+                                    <div id="print" class="d-flex gap-5">
+                                        <div style="flex:0.5;" class="mb-3">
+                                            <img src="uploads/<?php echo $row['img'] ?>" alt="" style="width: 100%; height:400px">
                                         </div>
-                                        <div style="flex:0.4;">
+                                        <div style="flex:0.5;">
                                             <h5><a href="#"><?php echo $row['name'] ?></a></h5>
                                             <p>Rp<?php echo $row['price'] ?> / Bulan</p>
 
@@ -100,12 +103,11 @@ if (!isset($_SESSION['user_name'])) {
 
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-end gap-3">
-                                        <button class="btn btn-secondary" onclick="document.location='user_page.php'">Cari kos lain</button>
-                                        <button class="btn btn_blue" onclick="printDiv('printableArea')">Cetak</button>
-
-                                    </div>
                                 </div>
+                            </div>
+                            <div class="d-flex justify-content-end gap-3">
+                                <button class="btn btn-secondary" onclick="document.location='user_page.php'">Cari kos lain</button>
+                                <input type="button" class="btn btn_blue" onclick="printPageArea('print')" value="Cetak" />
                             </div>
                         </div>
             <?php

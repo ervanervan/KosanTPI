@@ -64,12 +64,12 @@ if (!isset($_SESSION['user_name'])) {
             ?>
                         <div class="row g-4">
                             <div class="col">
-                                <div class="products-post card-effect d-flex flex-column">
-                                    <div class="d-flex gap-4 align-it">
-                                        <div style="flex:0.6;">
-                                            <img src="uploads/<?php echo $row['img'] ?>" alt="" style="width: 100%; height:300px">
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex gap-5">
+                                        <div style="flex:0.5;">
+                                            <img src="uploads/<?php echo $row['img'] ?>" alt="" style="width: 100%; height:400px">
                                         </div>
-                                        <div style="flex:0.4;">
+                                        <div style="flex:0.5;">
                                             <h5><a href="#"><?php echo $row['name'] ?></a></h5>
                                             <p>Rp<?php echo $row['price'] ?> / Bulan</p>
 
@@ -80,11 +80,11 @@ if (!isset($_SESSION['user_name'])) {
                                             <p><?php echo $row['fasilitas'] ?></p>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-end gap-3">
-                                        <button class="btn btn-danger" onclick="document.location='user_page.php'">Batal</button>
-                                        <?php echo '<a href="invoice.php?id=' . $row['id'] . '" class="btn btn_blue">Pesan</a>' ?>
-                                    </div>
                                 </div>
+                            </div>
+                            <div class="d-flex justify-content-end gap-3">
+                                <button class="btn btn-danger" onclick="document.location='user_page.php'">Batal</button>
+                                <?php echo '<a href="invoice.php?id=' . $row['id'] . '" class="btn btn_blue">Pesan</a>' ?>
                             </div>
                         </div>
             <?php
