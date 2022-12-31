@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
       } else {
          $insert = "INSERT INTO user (name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
          mysqli_query($conn, $insert);
-         header('location:login_form.php');
+         header('location:login.php');
       }
    }
 };
@@ -35,20 +35,15 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-   <link rel="stylesheet" href="css/stylelogin.css">
+<?php include "css/csslogin.php"; ?>
    <title>Register | Kosan TPI</title>
 
 </head>
 
 <body>
 
-   <div class="form-container">
-      <form action="" method="post">
+   <div class="container_log">
+      <form action="" method="post" class="form-log">
          <div class="text-center my-4">
             <img src="img/KosanTPI-Dark.svg" alt="logo" width="210" class="mt-4">
          </div>
@@ -56,7 +51,7 @@ if (isset($_POST['submit'])) {
          <?php
          if (isset($error)) {
             foreach ($error as $error) {
-               echo '<span class="error-msg">' . $error . '</span>';
+               echo '<span class="err_msg">' . $error . '</span>';
             };
          };
          ?>
@@ -70,7 +65,7 @@ if (isset($_POST['submit'])) {
             <option value="user">user</option>
          </select>
          <input type="submit" name="submit" value="Register" class="form-btn">
-         <p>Sudah memiliki Akun? <a href="login_form.php">Login disini!</a></p>
+         <p>Sudah memiliki Akun? <a href="login.php">Login disini!</a></p>
       </form>
 
    </div>

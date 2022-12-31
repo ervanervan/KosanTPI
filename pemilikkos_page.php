@@ -5,7 +5,7 @@
 session_start();
 
 if (!isset($_SESSION['pemilikkos_name'])) {
-    header('location:login_form.php');
+    header('location:login.php');
 }
 
 ?>
@@ -14,13 +14,7 @@ if (!isset($_SESSION['pemilikkos_name'])) {
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/boxicons.min.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <?php include "css/css.php"; ?>
     <title>Halaman pemilikkos | Kosan TPI</title>
 
 </head>
@@ -54,16 +48,16 @@ if (!isset($_SESSION['pemilikkos_name'])) {
     <section id="product" class="bg-light">
         <div class="container">
             <button class="btn btn_blue my-5">
-                <a href="product.php" class="text-light">Tambah Data Kos</a>
+                <a href="product.php" class="text-light"><i class="bx bxs-plus-circle"></i> Tambah Kos</a>
             </button>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">Gambar</th>
-                        <th scope="col">Nama Kos</th>
+                        <th scope="col">Gambar Kosan</th>
+                        <th scope="col">Nama</th>
                         <th scope="col">Harga</th>
-                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Alamat</th>
                         <th scope="col">Fasilitas</th>
                         <th scope="col">Operations</th>
                     </tr>
@@ -85,18 +79,18 @@ if (!isset($_SESSION['pemilikkos_name'])) {
                             $fasilitas = $row['fasilitas'];
 
                             echo '<tr>
-                        <th scope="row">' . $no . '</th>
-                        <td> <img src="uploads/' . $img . '"/></td>
-                        <td>' . $name . '</td>
-                        <td>' . $price . '</td>
-                        <td>' . $desc . '</td>
-                        <td>' . $fasilitas . '</td>
+                                    <th scope="row">' . $no . '</th>
+                                    <td> <img src="uploads/' . $img . '"/></td>
+                                    <td>' . $name . '</td>
+                                    <td>' . $price . '</td>
+                                    <td>' . $desc . '</td>
+                                    <td>' . $fasilitas . '</td>
                         
-                        <td>
-                            <button class="btn btn-primary"><a href="product_update.php?id=' . $id . '" class="text-light">Update</a></button>
-                            <button class="btn btn-danger"><a href="product_delete.php?id=' . $id . '" class="text-light">Delete</a></button>
-                        </td>
-                    </tr>';
+                                    <td>
+                                        <button class="btn btn-primary"><a href="product_update.php?id=' . $id . '" class="text-light"><i class="bx bxs-edit-alt"></i></a></button>
+                                        <button class="btn btn-danger"><a href="product_delete.php?id=' . $id . '" class="text-light"><i class="bx bxs-trash-alt"></i></a></button>
+                                    </td>
+                                    </tr>';
                             $no = $no + 1;
                         }
                     }

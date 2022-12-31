@@ -38,19 +38,14 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-   <link rel="stylesheet" href="css/stylelogin.css">
+<?php include "css/csslogin.php"; ?>
    <title>Login | Kosan TPI</title>
 
 </head>
 
 <body>
-   <div class="form-container">
-      <form action="" method="post">
+   <div class="container_log">
+      <form method="post" class="form-log">
          <div class="text-center my-4">
             <img src="img/KosanTPI-Dark.svg" alt="logo" width="210" class="mt-4">
          </div>
@@ -58,14 +53,14 @@ if (isset($_POST['submit'])) {
          <?php
          if (isset($error)) {
             foreach ($error as $error) {
-               echo '<span class="error-msg">' . $error . '</span>';
+               echo '<span class="err-msg">' . $error . '</span>';
             };
          };
          ?>
          <input type="email" name="email" required placeholder="Masukan alamat Email">
          <input type="password" name="password" required placeholder="Masukan Password">
          <input type="submit" name="submit" value="Login" class="form-btn">
-         <p>Belum memiliki Akun? <a href="register_form.php">Daftar disini!</a></p>
+         <p>Belum memiliki Akun? <a href="register.php">Daftar disini!</a></p>
       </form>
    </div>
 
